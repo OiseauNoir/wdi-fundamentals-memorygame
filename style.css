@@ -1,31 +1,32 @@
 .board {
-	height: 80%;
-	width: 50%;
-	display: inline-block;
-
+    height: 80%;
+    width: 50%;
+    display: inline-block;
 }
 .card {
-	height: 200px;
-	width: 150px;
-	background-color: rgb(255,241,58);
-	border: 1px solid #000;
-	border-radius: 10px;
+    height: 200px;
+    width: 150px;
+    background-color: rgb(255,241,58);
+    border: 1px solid #000;
+    border-radius: 10px;
     float: left;
     margin: 8%;
 }
 h1 {
-	color: rgb(2,132,130);
-    text-align: center;
+    color: #ffd700;
+text-align: center;
+text-decoration: underline;
 }
 h2 {
-	color: #ffd700;
-    text-align: center;
+    color: rgb(0,0,0);
+text-align: center;
 }  
 p {
-    text-align: center;
+text-align: center;
+text-decoration: none; 
 }
 .name {
-	color:#ff0000;
+    color:#ff0000;
 }
 nav {
     background-color: #808080;
@@ -49,6 +50,16 @@ nav a:hover {
         height: 0;
         font-size: 0;
 }
+body {
+background-color: rgba(0,0,0,.2);
+}
+
+/* GA - added to keep the card images from imgur a decent size */
+img {
+    height: 200px;
+  width: 150px;
+}
+
 footer { 
     background-color: #808080;
     text-align: center;

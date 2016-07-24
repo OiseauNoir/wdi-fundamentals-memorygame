@@ -11,19 +11,43 @@ if (cardOne === cardTwo) {
 }
 */
 
-//get element with the id game-board - variable
 var board = document.getElementById('game-board');
 
-// create board function (will create html for cards and appent the resulting html to div class board)
-function createBoard() {
+var cards = ['queen', 'queen', 'king', 'king'];
 
-// loop to make html element for cards
-for (var i=0; i<cardnumber; i++) {
-// create div element which will be used as a card
+var cardsInPlay = [];
+
+
+function createBoard() {
+  for (var i=0; i<cards.length; i++) {
+
 var cardElement = document.createElement('div');
-// add a class to the card element which will help link styling
 cardElement.className = 'card';
-// append each new card to div calls "board"
+cardElement.setAttribute('data-card', cards[i]);
+cardElement.addEventListener('click', isTwoCards);
 board.appendChild(cardElement);
+  }
 }
+
+function isMatch(cards) {
+  if (cards[0] === cards[1]) {
+	  alert('Hmph. Beginners Luck.');
+  } else {
+	  alert('Sucker! Try again!');
+  }
 }
+
+function isTwoCards() {
+  cardsInPlay.push(this.getAttribute('data-card'));
+  	if (this.getAttribute('data-card') === 'king') {
+		this.innerHTML = "<img src='http://i.imgur.com/bnuv5Im.png'>"; // king
+	} else {
+		this.innerHTML = "<img src='http://i.imgur.com/v6buNt2.png'>"; //queen
+	}
+  if (cardsInPlay.length ===2) {
+  isMatch(cardsInPlay);
+  cardsInPlay = [];
+  }
+}
+
+createBoard();
